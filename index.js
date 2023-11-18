@@ -12,8 +12,8 @@ const polyName = promptSync("Original KML (polygon):"); // Prompt the user for t
 const linesName = promptSync("Lines KML (lines):"); // Prompt the user for the filename
 const keepExternalLines = promptSync("Keep external lines? (y/n):"); // Prompt the user for the filename
 
-const linesKml = fs.readFileSync(`${linesName}`, "utf-8");
-const polyKml = fs.readFileSync(`${polyName}`, "utf-8");
+const linesKml = fs.readFileSync(`./${linesName}.kml`, "utf-8");
+const polyKml = fs.readFileSync(`./${polyName}.kml`, "utf-8");
 const linesGeoJson = tj.kml(new DOMParser().parseFromString(linesKml));
 const polyGeoJson = tj.kml(new DOMParser().parseFromString(polyKml));
 
